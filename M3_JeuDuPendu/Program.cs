@@ -1,10 +1,70 @@
-﻿namespace M3_JeuDuPendu
+﻿
+
+
+namespace M3_JeuDuPendu
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string path = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "data",
+                "mots_fr.txt"
+                );
+
+            List<string> mots = ChargerListeMots(path);
+
+            string motADeviner = ObtenirMotADeviner(mots);
+
+            Console.WriteLine("Mot choisi");
+            Console.WriteLine(motADeviner);
+
+
+            /* Console.WriteLine("Mots Chargés : ");
+
+
+            //*foreach (string mot in mots)
+            {
+                Console.WriteLine(mot);
+            }*/
+
         }
+
+
+
+        /// <summary>
+        /// Foncion qui permet de charger le fichier de mota deviner 
+        /// </summary>
+       /// <param name="nomFichier"> c'est le nom du fichier qui contient les mots a deviner</param>
+       /// <returns>  retourne une lsite de mot qu'on peut utiliser pour faire deviner </returns>
+        static List<string> ChargerListeMots(string nomFichier)
+        {
+          List<string> mots = File.ReadLines(nomFichier).ToList();
+
+          return mots;
+        }
+
+
+
+        /// <summary>
+        /// Fonction qui permet d'obtenir par hasard un mot a deviner dans la liste des mots 
+        /// </summary>
+        /// <param name="mots">liste de mots a deviner </param>
+        /// <returns>  retouner le mot a deviner </returns>
+        static string ObtenirMotADeviner (List<string>mots)
+        {
+            Random inconnuADeviner = new Random();
+
+            int positonMot = inconnuADeviner.Next(mots.Count);
+
+            string motADeviner = mots[positonMot];
+
+            return motADeviner;
+
+        }
+
+
+
     }
 }
