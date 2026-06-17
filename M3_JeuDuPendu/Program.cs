@@ -20,6 +20,9 @@ namespace M3_JeuDuPendu
             Console.WriteLine("Mot choisi");
             Console.WriteLine(motADeviner);
 
+            int nombreErreur = 6;
+
+            AfficherPotence(nombreErreur);
 
             /* Console.WriteLine("Mots Chargés : ");
 
@@ -65,6 +68,94 @@ namespace M3_JeuDuPendu
         }
 
 
+        static void AfficherPotence(int nombreErreur)
+        {
+            string[] potence =
+            {
+                """
+                +--+----
+                |
+                |
+                |
+                |
+                |
+                |
+                +-------------
+                """,
 
+                """
+                +--+----
+                |  |
+                |  O
+                | 
+                |
+                |
+                |
+                +-------------
+                """,
+
+                """
+                +--+----
+                |  |
+                |  O
+                |  |
+                |
+                |
+                |
+                +-------------
+                """,
+                """
+                +--+----
+                |  |
+                |  O
+                | /|
+                |
+                |
+                |
+                +-------------
+                """,
+                """
+                +--+----
+                |  |
+                |  O
+                | /|\
+                |
+                |
+                |
+                +-------------
+                """,
+                """
+                +--+----
+                |  |
+                |  O
+                | /|\
+                | /
+                |
+                |
+                +-------------
+                """,
+                """
+                +--+----
+                |  |
+                |  O
+                | /|\
+                | / \
+                |
+                |
+                +-------------
+                """,
+
+            };
+            Console.WriteLine(potence[nombreErreur]);
+        }
+
+
+        /*
+        static string SaisirLettreAZ()
+        {
+
+        }
+
+        */
     }
 }
