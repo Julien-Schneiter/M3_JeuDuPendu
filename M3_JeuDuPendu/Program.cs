@@ -1,6 +1,7 @@
 ﻿
 
 
+using System.Reflection.Metadata.Ecma335;
 namespace M3_JeuDuPendu
 {
     internal class Program
@@ -24,14 +25,7 @@ namespace M3_JeuDuPendu
 
             AfficherPotence(nombreErreur);
 
-            /* Console.WriteLine("Mots Chargés : ");
-
-
-            //*foreach (string mot in mots)
-            {
-                Console.WriteLine(mot);
-            }*/
-
+            SaisirLettreAZ();
         }
 
 
@@ -67,7 +61,10 @@ namespace M3_JeuDuPendu
 
         }
 
-
+        /// <summary>
+        /// Affiche l'état de la potence par rapport au erreur qui sont faire par l'utilisateur.
+        /// </summary>
+        /// <param name="nombreErreur"></param>
         static void AfficherPotence(int nombreErreur)
         {
             string[] potence =
@@ -150,15 +147,33 @@ namespace M3_JeuDuPendu
         }
 
 
+<<<<<<< HEAD
         
         static string SaisirLettreAZ()
+=======
+        /// <summary>
+        /// Foncion qui lie la lettre inseré par l'utilisateur, vérifie si c'est bien une lettre, si oui la transforme en majuscule.
+        /// </summary>
+        /// <returns> La lettre inseré par l'utilisateur sinon " votre saisie est invalide."</returns>
+        static char SaisirLettreAZ()
+>>>>>>> f8b7f7bb46cebf004a8d477e92fea1da6ada37e6
         {
+            string saisie;
+            char lettre = ' ';
+            bool saisieValide = false;
 
+<<<<<<< HEAD
 
             while ( ! saisieValide )
             {
                 Console.WriteLine("Quelle lettre voulez-vous jouer ?");
                 saisie = Console.ReadLine() ?? "";
+=======
+            while ( ! saisieValide )
+            {
+                Console.WriteLine("Quelle lettre voulez-vous jouer ?");
+                saisie = Console.ReadLine();
+>>>>>>> f8b7f7bb46cebf004a8d477e92fea1da6ada37e6
 
                 if (saisie.Length ==1 && char.IsLetter(saisie[0]))
                 {
@@ -174,9 +189,16 @@ namespace M3_JeuDuPendu
                 }
             }
             return lettre;
+<<<<<<< HEAD
 
         }
 
         
+=======
+        }
+        
+           
+  
+>>>>>>> f8b7f7bb46cebf004a8d477e92fea1da6ada37e6
     }
 }
