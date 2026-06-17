@@ -147,33 +147,24 @@ namespace M3_JeuDuPendu
         }
 
 
-<<<<<<< HEAD
+
         
-        static string SaisirLettreAZ()
-=======
+        
         /// <summary>
         /// Foncion qui lie la lettre inseré par l'utilisateur, vérifie si c'est bien une lettre, si oui la transforme en majuscule.
         /// </summary>
         /// <returns> La lettre inseré par l'utilisateur sinon " votre saisie est invalide."</returns>
         static char SaisirLettreAZ()
->>>>>>> f8b7f7bb46cebf004a8d477e92fea1da6ada37e6
         {
             string saisie;
             char lettre = ' ';
             bool saisieValide = false;
 
-<<<<<<< HEAD
-
             while ( ! saisieValide )
             {
                 Console.WriteLine("Quelle lettre voulez-vous jouer ?");
                 saisie = Console.ReadLine() ?? "";
-=======
-            while ( ! saisieValide )
-            {
-                Console.WriteLine("Quelle lettre voulez-vous jouer ?");
-                saisie = Console.ReadLine();
->>>>>>> f8b7f7bb46cebf004a8d477e92fea1da6ada37e6
+
 
                 if (saisie.Length ==1 && char.IsLetter(saisie[0]))
                 {
@@ -189,16 +180,6 @@ namespace M3_JeuDuPendu
                 }
             }
             return lettre;
-<<<<<<< HEAD
-
         }
-
-        
-=======
-        }
-        
-           
-  
->>>>>>> f8b7f7bb46cebf004a8d477e92fea1da6ada37e6
     }
 }
