@@ -1,6 +1,7 @@
 ﻿
 
 
+using System.Reflection.Metadata.Ecma335;
 namespace M3_JeuDuPendu
 {
     internal class Program
@@ -24,14 +25,7 @@ namespace M3_JeuDuPendu
 
             AfficherPotence(nombreErreur);
 
-            /* Console.WriteLine("Mots Chargés : ");
-
-
-            //*foreach (string mot in mots)
-            {
-                Console.WriteLine(mot);
-            }*/
-
+            SaisirLettreAZ();
         }
 
 
@@ -67,7 +61,10 @@ namespace M3_JeuDuPendu
 
         }
 
-
+        /// <summary>
+        /// Affiche l'état de la potence par rapport au erreur qui sont faire par l'utilisateur.
+        /// </summary>
+        /// <param name="nombreErreur"></param>
         static void AfficherPotence(int nombreErreur)
         {
             string[] potence =
@@ -150,12 +147,38 @@ namespace M3_JeuDuPendu
         }
 
 
-        /*
-        static string SaisirLettreAZ()
+        /// <summary>
+        /// Foncion qui lie la lettre inseré par l'utilisateur, vérifie si c'est bien une lettre, si oui la transforme en majuscule.
+        /// </summary>
+        /// <returns> La lettre inseré par l'utilisateur sinon " votre saisie est invalide."</returns>
+        static char SaisirLettreAZ()
         {
+            string saisie;
+            char lettre = ' ';
+            bool saisieValide = false;
 
+            while ( ! saisieValide )
+            {
+                Console.WriteLine("Quelle lettre voulez-vous jouer ?");
+                saisie = Console.ReadLine();
+
+                if (saisie.Length ==1 && char.IsLetter(saisie[0]))
+                {
+                    lettre = char.ToUpper(saisie[0]);
+                    saisieValide = true;
+                }
+
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Votre saisie est invalide.");
+                    Console.ResetColor();
+                }
+            }
+            return lettre;
         }
-
-        */
+        
+           
+  
     }
 }
