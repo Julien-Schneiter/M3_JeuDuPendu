@@ -150,12 +150,33 @@ namespace M3_JeuDuPendu
         }
 
 
-        /*
+        
         static string SaisirLettreAZ()
         {
 
+
+            while ( ! saisieValide )
+            {
+                Console.WriteLine("Quelle lettre voulez-vous jouer ?");
+                saisie = Console.ReadLine() ?? "";
+
+                if (saisie.Length ==1 && char.IsLetter(saisie[0]))
+                {
+                    lettre = char.ToUpper(saisie[0]);
+                    saisieValide = true;
+                }
+
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Votre saisie est invalide.");
+                    Console.ResetColor();
+                }
+            }
+            return lettre;
+
         }
 
-        */
+        
     }
 }
